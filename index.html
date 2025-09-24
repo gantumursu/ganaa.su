@@ -1,0 +1,119 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-typing.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<div id="loading" style="display: none;">
+		<div class="cs-dialog" style="min-width: 380px;">
+				  <div class="heading">
+					<div class="wrapper">
+					  <div style="margin-bottom: 8px;" class="icon"></div>
+					  <p style="margin-bottom: 5px;" class="text">Loading...</p>
+					</div>
+				  </div>
+				  <div style="padding: 5px 12px 16px;">
+				  <p style="color: #919f8a;">Loading website resources...</p>
+				  <p style="margin-top: 5px;"></p>
+						<div style="display: flex;">
+						  <div class="cs-progress-bar" id="progress-bar" style="display: none;">
+							<div style="width: 100%;" class="bars"></div>
+						  </div>
+							<div class="loading-btns">
+							<button class="cs-btn">Cancel</button>
+							</div>
+						</div>
+				  </div>
+		</div>
+	</div>
+<div id="block" style="display: block;">
+		<div class="cs-dialog">
+              <div class="heading">
+                <div class="wrapper">
+                  <div style="margin-bottom: 8px;" class="icon"></div>
+                  <p style="margin-bottom: 5px;" class="text">ganaa.su</p>
+                </div>
+                <button class="cs-btn close"></button>
+              </div>
+		<div class="cs-tabs">
+			<input class="radiotab" name="tabs" tabindex="1" type="radio" id="tabone" checked="checked">
+				<label class="label" for="tabone">Links</label>
+					  <div class="panel" tabindex="1">
+					  <p>Links to all my socials and projects:</p>
+					  <p style="margin-top: 3px;"></p>
+						<button class="cs-btn"><a href="https://www.youtube.com/@GantumurSu?sub_confirmation=1">YouTube - EN</a></button>
+						<button class="cs-btn"><a href="https://github.com/gantumursu">GitHub</a></button>
+					  <p style="margin-top: 5px;"></p>
+						<button class="cs-btn"><a href="https://example.com">Paste</a></button>
+						<button class="cs-btn"><a href="https://instagram.com/ganaa.su">Instagram</a></button>
+					  </div>
+			<input class="radiotab" tabindex="1" name="tabs" type="radio" id="tabtwo">
+				<label class="label" for="tabtwo">General Information</label>
+						<div class="panel" tabindex="1">
+							<p>Currently a CS major senior at NYU. I speak Mongolian, English, Chinese and can understand some Spanish, French and Russian.</p>
+						</div>
+			<input class="radiotab" tabindex="1" name="tabs" type="radio" id="tabthree">
+				<label class="label" for="tabthree">Contact</label>
+						<div class="panel" tabindex="1">
+						    <p>General communication email:</p>
+							<div class="code-block">
+								<div class="inner">
+									<pre><code id="code-block">gantumur.st@gmail.com</code></pre>
+									<button class="cs-btn">Copy</button>
+								</div>
+							</div>
+							<p style="margin-top: 16px;"></p>
+							<p> I reply within 30 minutes on Telegram / Instagram:</p>
+							<div class="code-block">
+								<div class="inner">
+									<pre><code id="code-block">https://t.me/ananasussy</code></pre>
+									<button class="cs-btn">Copy</button>
+								</div>
+							</div>
+						</div>
+		</div>
+				<menu class="footer-btns">
+                <button class="cs-btn">OK</button>
+                <button class="cs-btn">Cancel</button>
+                <button class="cs-btn">Apply</button>
+				</menu>
+		</div>
+    </div>
+    <script src="main.js"></script>
+    <script>
+window.onload = function () {
+  const progressBar = document.querySelector(".cs-progress-bar .bars");
+  const header = document.getElementById("block"); 
+  const loadingDiv = document.getElementById("loading");
+
+  let width = 10;
+  const maxWidth = 100;
+
+  progressBar.style.width = width + '%';
+
+  setTimeout(() => {
+    const progressInterval = setInterval(() => {
+      const step = Math.random() * 18;
+      width += step;
+
+      if (width > maxWidth) {
+        width = maxWidth;
+      }
+
+      progressBar.style.width = width + '%';
+
+      if (width === maxWidth) {
+        clearInterval(progressInterval);
+
+        setTimeout(() => {
+          document.getElementById("progress-bar").style.display = "none";
+          loadingDiv.style.display = "none";
+          header.style.display = "block";
+        }, 200);
+      }
+    }, 100); 
+  }, 500);
+};
+	</script>
+</html>
+
