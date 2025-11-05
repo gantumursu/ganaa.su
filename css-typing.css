@@ -132,6 +132,8 @@ body {
 .cs-dialog {
   min-width: 380px;
   max-width: 480px;
+  min-height: 120px;
+  max-height: 500px;
   background-color: var(--bg);
   color: var(--text);
   border: 1px solid;
